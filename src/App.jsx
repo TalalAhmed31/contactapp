@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import {uuid} from 'uuidv4';
 import React from "react";
 import "./App.css";
 import Header from "./components/Header";
@@ -7,25 +8,9 @@ import ContactList from "./components/ContactList";
 
 function App() {
   const LOCAL_STORAGE_KEY = "contacts";
-  // COMMENTING OUT BECAUSE WE RE NOT USING STATIC LIST BUT DYNAMIC
-  //   const contacts = [
-  //     {
-  //     id:"1",
-  //     name:'talal',
-  //     email:'talal@gmail.com',
-  //   },
-  //   {
-  //     id:"2",
-  //     name:'talal',
-  //     email:'talal@gmail.com',
-  //   },
-  //   {
-  //     id:"3",
-  //     name:'talal',
-  //     email:'talal@gmail.com',
-  //   },
-  // ]
+
   const [contacts, setContacts] = useState([]);
+  
   const addContactHandler = (contact) => {
     console.log(contact);
     setContacts([...contacts, contact]);
