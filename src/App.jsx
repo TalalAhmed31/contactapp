@@ -12,13 +12,16 @@ function App() {
   const [contacts, setContacts] = useState(JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) ?? []);
   const addContactHandler = (contact) => {
     console.log(contact);
-    setContacts([...contacts, {id: uuid(), ...contacts}]);
+    setContacts([...contacts, {id: uuid(), ...contact}]);
   };
-  
-  // useEffect(() => {
-  //  const retriveContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-  //  if(retriveContacts)setContacts(retriveContacts);
-  // }, []);
+
+  const removeContactHandler = (id) => {
+    const newContactList = contacts.filter((contact) => {
+      return contact.id !== id;
+    })
+
+    setContacts(newContactList);
+  }
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
@@ -29,7 +32,7 @@ function App() {
     <div className="ui container">
       <Header />
       <AddContact addContactHandler={addContactHandler} />
-      <ContactList contacts={contacts} />
+      <ContactList contacts={contacts} getContactId = {removeContactHandler}/>
     </div>
   );
 }
