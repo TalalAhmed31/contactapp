@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
 import React from "react";
 import "./App.css";
-import Header from "./components/Header";
-import AddContact from "./components/AddContact";
-import ContactList from "./components/ContactList";
+import Header from "./components/Header.jsx";
+import AddContact from "./components/AddContact.jsx";
+import ContactList from "./components/ContactList.jsx";
 
 function App() {
   const LOCAL_STORAGE_KEY = "contacts";
