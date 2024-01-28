@@ -4,6 +4,7 @@ import React from "react";
 import "./App.css";
 import Header from "./components/Header.jsx";
 import ContactList from "./components/ContactList.jsx";
+import AddContact from "./components/AddContact.jsx"
 
 function App() {
   const LOCAL_STORAGE_KEY = "contacts";
