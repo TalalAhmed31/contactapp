@@ -3,7 +3,6 @@ import { v4 as uuid } from "uuid";
 import React from "react";
 import "./App.css";
 import Header from "./components/Header.jsx";
-import AddContact from "./components/Addcontact.jsx";
 import ContactList from "./components/ContactList.jsx";
 
 function App() {
